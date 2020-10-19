@@ -3,7 +3,7 @@
 Tests and resources for the PT-sim project.
 
 
-The files `pt-sim.sh` and `pt-sim-aging.sh` are wrapper files you should modify to call your executables.
+The files `pt-sim.sh` and `pt-sim-clock.sh` are wrapper files you should modify to call your executables.
 
 You should add Makefile logic so that your program can be run with commands like:
 
