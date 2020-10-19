@@ -1,7 +1,7 @@
 #project-specifc ignores
 tests/output
-pt-sim
-pt-sim-aging
+ptsim
+ptsim-aging
 *.x
 
 # Prerequisites
