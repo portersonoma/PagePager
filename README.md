@@ -8,6 +8,6 @@ The files `pt-sim.sh` and `pt-sim-aging.sh` are wrapper files you should modify 
 You should add Makefile logic so that your program can be run with commands like:
 
     $ make ptsim
-    $ make ptsim-aging
+    $ make ptsim-clock
     $ sh ptsim test/aPageTableFile < test/anInputFile
-    $ sh ptsim-aging test/aPageTableFile < test/anInputFile
+    $ sh ptsim-clock test/aPageTableFile < test/anInputFile
