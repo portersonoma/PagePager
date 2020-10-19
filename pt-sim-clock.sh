@@ -1,4 +1,4 @@
-echo "Welcome to PT-Sim-Aging, the enhanced page table simulator"
+echo "Welcome to PT-Sim-Clock, the enhanced page table simulator"
 echo "Using input file $1"
 
 # This is where you would run your program
