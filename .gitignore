@@ -1,7 +1,7 @@
 #project-specifc ignores
 tests/output
 ptsim
-ptsim-aging
+ptsim-clock
 *.x
 
 # Prerequisites
