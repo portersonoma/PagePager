@@ -19,7 +19,7 @@ ptsim-clock: pt-sim-clock.sh
 	@echo ${msg} >> ptsim-clock
 
 clean:
-	rm -f ptsim ptsim-aging
+	rm -f ptsim ptsim-clock
 
 
 
