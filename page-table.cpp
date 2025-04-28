@@ -50,12 +50,6 @@ int PageTable::translate(unsigned int virtualAddress, bool& pageFault, bool& seg
     unsigned int pageNumber = virtualAddress >> pageOffsetBits;
     unsigned int offset = virtualAddress & pageMask;
 
-    std::cerr << "PageTable size: " << entries.size() << std::endl;
-    std::cerr << "Virtual address: " << virtualAddress
-    << ", Page number: " << pageNumber
-    << ", Offset: " << offset
-    << std::endl;
-
     if (pageNumber >= entries.size()) {
         segFault = true;
         return -1;
