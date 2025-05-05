@@ -15,12 +15,22 @@ unsigned int parseAddress(const std::string& input) {
 }
 
 int main(int argc, char* argv[]) {
-    if (argc != 2) {
-        std::cerr << "Usage: " << argv[0] << " <page_table_file>" << std::endl;
+    if (argc < 2 || argc > 3) {
+        std::cerr << "Usage: " << argv[0] << " [--clock] <page_table_file>" << std::endl;
         return 1;
     }
 
-    PageTable pt(argv[1]);
+    bool useClock = false;
+    std::string filename;
+
+    if (argc == 3 && std::string(argv[1]) == "--clock") {
+        useClock = true;
+        filename = argv[2];
+    } else {
+        filename = argv[1];
+    }
+
+    PageTable pt(filename, useClock);
 
     std::string input;
     while (std::getline(std::cin, input)) {
@@ -33,6 +43,9 @@ int main(int argc, char* argv[]) {
 
         if (segFault) {
             std::cout << "SEGFAULT" << std::endl;
+        } else if (pageFault) {
+            std::cout << "PAGEFAULT" << std::endl;
+            std::cout << std::hex << "0x" << physAddr << std::dec << std::endl;
         } else if (onDisk) {
             std::cout << "DISK" << std::endl;
         } else {
@@ -42,3 +55,4 @@ int main(int argc, char* argv[]) {
 
     return 0;
 }
+

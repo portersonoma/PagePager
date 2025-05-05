@@ -13,7 +13,7 @@ struct PageTableEntry {
 
 class PageTable {
 public:
-    PageTable(const std::string& filename);
+    PageTable(const std::string& filename, bool clockMode);
 
     int translate(unsigned int virtualAddress, bool& pageFault, bool& segFault, bool& onDisk);
     void printEntry(size_t index) const;
@@ -26,7 +26,12 @@ private:
     int pageOffsetBits;
     unsigned int pageMask;
 
-    void loadPageTable(const std::string& filename);
+    int runClockAlgorithm();
+
+    bool useClockAlgorithm = false; // default = false
+    size_t clockHand = 0;           // clock pointer
+
+    void loadPageTable(const std::string &filename);
 };
 
 #endif
