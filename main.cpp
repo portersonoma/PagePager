@@ -44,7 +44,7 @@ int main(int argc, char* argv[]) {
         if (segFault) {
             std::cout << "SEGFAULT" << std::endl;
         } else if (pageFault) {
-            std::cout << "PAGEFAULT" << std::endl;
+            std::cout << "PAGEFAULT ";
             std::cout << std::hex << "0x" << physAddr << std::dec << std::endl;
         } else if (onDisk) {
             std::cout << "DISK" << std::endl;
